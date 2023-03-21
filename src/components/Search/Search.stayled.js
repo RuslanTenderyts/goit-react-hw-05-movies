@@ -25,5 +25,6 @@ export const ErrorMessage = styled(FormikError)`
 `
 
 export const Btn = styled.button`
-displey: block;
+    padding: 5px 10px;
+    margin-left: -1px;
 `

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Container, Img, ContaineItem, } from "./MovieInfo.stayled";
 import PropTypes from 'prop-types';
@@ -7,13 +8,13 @@ export const MovieInfo = ({movie}) => {
     const genresMovie = genres.map(genre => genre.name).join(" ");
     const imgUrl = `http://image.tmdb.org/t/p/w500/${poster_path}`;
     const location = useLocation();
-    const backLinkHref = location.state?.from ?? "/movies";
+    const backLinkHref = useRef(location.state?.from ?? "/movies");
     console.log(movie)
      
     return (
        <>
         <Container>
-            <Link to={backLinkHref}> &#8592; Go Back </Link>
+            <Link to={backLinkHref.current}> &#8592; Go Back </Link>
             <ContaineItem>      
                 <div>
                     <Img src={imgUrl} alt={title}/>
