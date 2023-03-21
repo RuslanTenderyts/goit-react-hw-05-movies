@@ -2,13 +2,11 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchMoviesCredits } from "service/api";
 
-export const Cast = () => {
+const Cast = () => {
     const [actors, setActors] = useState([]);
     const { id } = useParams();
-    console.log(id);
-
+   
     useEffect(() => { 
-          
         async function getFetch (id) {
             try {
                 const data = await fetchMoviesCredits(id);
@@ -18,9 +16,8 @@ export const Cast = () => {
             } 
         };
         getFetch(id);
-      }, [id]);
-      console.log(actors);
-   
+    }, [id]);
+         
     return (
         <div>
             <ul>
@@ -35,3 +32,5 @@ export const Cast = () => {
         </div>
     )
 }
+
+export default Cast;

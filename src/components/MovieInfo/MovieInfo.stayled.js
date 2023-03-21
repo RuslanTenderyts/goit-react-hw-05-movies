@@ -14,7 +14,7 @@ export const Link = styled(NavLink)`
   }
 `;
 export const Container = styled.div`
-    max-width: 960px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 16px;
     border-bottom: 1px solid black;

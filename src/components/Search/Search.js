@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
-import { Field, ErrorMessage } from "./Search.stayled";
+import { Field, ErrorMessage, Btn } from "./Search.stayled";
 import * as Yup from 'yup';
 
 const ContactSchema = Yup.object().shape({
@@ -28,9 +28,9 @@ export const Search = ({onSubmit}) => {
             placeholder="Search movie"
           />
           <ErrorMessage name="search" component='span'/>
-          <button type="submit">
+          <Btn type="submit">
             <span>Search</span>
-          </button>
+          </Btn>
         </Form>
       </Formik>
   )

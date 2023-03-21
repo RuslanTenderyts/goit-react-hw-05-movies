@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.ul`
-  font: 14px "Trebuchet MS", "Lucida Sans";
+  font: 18px "Trebuchet MS", "Lucida Sans";
   width: 300px;
   text-shadow: 0 1px 0 rgba(255,255,255,.5);
 `;

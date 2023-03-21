@@ -1,9 +1,10 @@
-import { MoviesItem } from "components/MoviesItem/MoviesItem"
+import { MovieInfo } from "components/MovieInfo/MovieInfo"
 import { Outlet, useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 import { fetchMoviesDetails } from "service/api";
+import { Suspense } from "react";
 
-export const MoviesDetals = () => {
+const MoviesDetals = () => {
     const [movie, setMovie] = useState('');
     const { id } = useParams();
    
@@ -23,8 +24,11 @@ export const MoviesDetals = () => {
 
     return (
         <div>
-            {movie && <MoviesItem movie={movie} />}
-            <Outlet />
+            {movie && <MovieInfo movie={movie} />}
+            <Suspense fallback={<div>Loading subpage...</div>}>
+                <Outlet />
+            </Suspense>
         </div>
     )
 }
+export default MoviesDetals;

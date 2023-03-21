@@ -8,6 +8,7 @@ export const Field = styled(FormikField)`
     width: 270px;
     padding: 1.5px;
     box-shadow: rgba(0, 0, 0, 0.06) 1px 2px 15px 1px;
+    line-height: 25px;
     
     placeholder {
         font: inherit;
@@ -21,4 +22,8 @@ export const ErrorMessage = styled(FormikError)`
     width: 170px;
     text-align: end;
     color: tomato;
+`
+
+export const Btn = styled.button`
+displey: block;
 `
